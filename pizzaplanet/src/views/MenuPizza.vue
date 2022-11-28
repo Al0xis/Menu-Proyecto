@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div id="background" class="background-image" >
     <h1 class="text-center">Pizzas disponibles</h1>
-    <v-container>
+    <v-container class="card-container">
       <v-row>
         <v-col
           v-for="(pizza, idx) in pizzas"
@@ -13,6 +13,7 @@
           <v-card
             class="mx-auto"
             min-height="400px"
+            color="#282348"
           >
             <v-img
               :src="getImg(idx)"
@@ -28,13 +29,16 @@
             </v-card-title>
 
             <v-card-subtitle>
-              {{pizza.descripcion}}
+              <div class="ml-6 text-subtitle-2">
+                {{pizza.descripcion}}
+              </div>
             </v-card-subtitle>
 
             <v-card-actions>
               <v-btn
-                color="#D1493F"
-                text
+                color="amber"
+                elevation="5"
+                rounded
                 @click="mostrarIngredientes = !mostrarIngredientes"
 
               >
@@ -45,8 +49,9 @@
               <v-spacer></v-spacer>
 
               <v-btn
-                color="#D1493F"
-                text
+                color="error"
+                elevation="5"
+                rounded
                 @click="crearPedido(pizza.id_pizzaPre)"
               >
                 Comprar
@@ -289,7 +294,12 @@
 </script>
 
 <style scoped>
-  .card{
+.background-image {
+  background-image: url("../assets/fondo.svg");
+  background-size:cover;
+  
+}
+.card{
     margin: 20px 10% 0px 10%;
   }
 
@@ -308,5 +318,17 @@
     margin: 20px;
     }
 
+  .text-center {
+    color: #fff;
+    font-family: sans-serif;
+  }
+
+  .ml-5 {
+    color: #fff;
+  }
+
+  .ml-6 {
+    color: #fff;
+  }
 </style>
 

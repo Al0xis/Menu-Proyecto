@@ -9,7 +9,7 @@ app.use(express.urlencoded({extended: true}));
 app.use('/pizzaPre', require('./routes/pizzaPredeterminada'));
 app.use('/ingredientes', require('./routes/Ingredientes'));
 app.use('/tamanios', require('./routes/tamanio'));
-app.use('/ordenes', require('./routes/orden'));
+app.use('/ordenes', require('./routes/Orden'));
 app.use('/pizzaPersonalizada', require('./routes/pizzaPersonalizada'));
 app.use('/receta', require('./routes/Receta'));
 app.use('/ticket', require('./routes/ticket'));
